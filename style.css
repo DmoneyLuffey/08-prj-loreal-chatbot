@@ -39,25 +39,71 @@ body {
   height: 360px;
   border: 1px solid #000;
   padding: 20px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
   overflow-y: auto;
   background: #fafafa;
-  white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 /* messages */
 .msg {
-  margin-bottom: 14px;
-  line-height: 1.5;
+  line-height: 1.4;
+  max-width: 82%;
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .msg.user {
-  color: #000;
+  color: #fff;
+  background: #1f1f1f;
+  align-self: flex-end;
+  border-bottom-right-radius: 6px;
 }
 
 .msg.ai {
-  color: #666666;
+  color: #222;
+  background: #ffffff;
+  align-self: flex-start;
+  border: 1px solid #dedede;
+  border-bottom-left-radius: 6px;
+}
+
+.msg-speaker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.msg-text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.msg.thinking {
+  color: #444;
+  font-style: italic;
+  animation: thinkingPulse 1s ease-in-out infinite;
+}
+
+@keyframes thinkingPulse {
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
 }
 
 /* input row */
